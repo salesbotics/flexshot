@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="../../src/popup/popup.css" />
+  <style>body{margin:0}</style>
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <img src="../../icons/icon48.png" width="28" height="28" alt="" />
+      <strong>Flexshot</strong>
+    </div>
+    <button type="button" class="linkish">Open on page</button>
+  </header>
+  <nav class="tabs">
+    <button type="button" class="tab"><span class="tab-ico">📷</span> Screenshot</button>
+    <button type="button" class="tab active"><span class="tab-ico">🔴</span> Record</button>
+    <button type="button" class="tab"><span class="tab-ico">⋯</span> More</button>
+  </nav>
+  <section class="panel active">
+    <p class="lead">Record your screen with audio</p>
+    <button type="button" class="tile featured">
+      <span class="tile-icon record" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></span>
+      <span class="tile-text"><strong>Start screen record</strong><small>Tab, window, or full screen + mic</small></span>
+      <span class="tile-arrow">›</span>
+    </button>
+    <ul class="tips">
+      <li>Download video as WebM</li>
+      <li>Optional separate audio file</li>
+      <li>Annotate screenshots after capture</li>
+    </ul>
+  </section>
+  <footer class="foot">After capture → annotate with pen, text, arrows, blur, crop</footer>
+</body>
+</html>

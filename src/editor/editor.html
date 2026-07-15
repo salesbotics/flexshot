@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flexshot Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="editor.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <img src="../../icons/icon32.png" alt="" width="22" height="22" />
+        <strong>Flexshot</strong>
+        <span id="docTitle" class="doc-title">Untitled</span>
+      </div>
+      <div class="top-actions">
+        <button type="button" id="btnUndo" class="ghost" title="Undo (Ctrl+Z)">Undo</button>
+        <button type="button" id="btnRedo" class="ghost" title="Redo (Ctrl+Y)">Redo</button>
+        <button type="button" id="btnCopy" class="ghost">Copy</button>
+        <div class="split">
+          <button type="button" id="btnDownload" class="primary">Download PNG</button>
+          <select id="exportFormat" aria-label="Export format">
+            <option value="png">PNG</option>
+            <option value="jpeg">JPG</option>
+            <option value="webp">WebP</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <aside class="toolbar" aria-label="Tools">
+        <button type="button" class="tool active" data-tool="select" title="Select / move">
+          <svg viewBox="0 0 24 24"><path d="M5 3l14 8.5-6.2 1.6L10 21z" fill="currentColor"/></svg>
+          <span>Select</span>
+        </button>
+        <button type="button" class="tool" data-tool="pen" title="Pen">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 20l4.5-1.2L19 8.3a1.8 1.8 0 0 0-2.5-2.5L6 16.3 4 20z" stroke="currentColor" stroke-width="1.7"/></svg>
+          <span>Pen</span>
+        </button>
+        <button type="button" class="tool" data-tool="highlighter" title="Highlighter">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 16l7-7 4 4-7 7H5v-4zM14 7l2.5-2.5a1.8 1.8 0 0 1 2.5 2.5L16.5 9.5" stroke="currentColor" stroke-width="1.7"/></svg>
+          <span>Marker</span>
+        </button>
+        <button type="button" class="tool" data-tool="arrow" title="Arrow">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5M19 5h-7M19 5v7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Arrow</span>
+        </button>
+        <button type="button" class="tool" data-tool="line" title="Line">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 19L19 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span>Line</span>
+        </button>
+        <button type="button" class="tool" data-tool="rect" title="Rectangle">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="1.5" stroke="currentColor" stroke-width="1.8"/></svg>
+          <span>Rect</span>
+        </button>
+        <button type="button" class="tool" data-tool="ellipse" title="Ellipse">
+          <svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="8" ry="5.5" stroke="currentColor" stroke-width="1.8"/></svg>
+          <span>Ellipse</span>
+        </button>
+        <button type="button" class="tool" data-tool="text" title="Text">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 6h14M12 6v13M8 19h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <span>Text</span>
+        </button>
+        <button type="button" class="tool" data-tool="number" title="Number pin">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/><path d="M10.2 9.2c.4-.7 1-.9 1.7-.9 1.1 0 1.9.7 1.9 1.8 0 1.4-1.4 2-1.9 3.2M12 17.2h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <span>Pin</span>
+        </button>
+        <button type="button" class="tool" data-tool="blur" title="Blur / redact">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="4" y="7" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M7 12h.01M10 12h.01M13 12h.01M16 12h.01" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+          <span>Blur</span>
+        </button>
+        <button type="button" class="tool" data-tool="crop" title="Crop">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M7 3v14h14M3 7h14v14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Crop</span>
+        </button>
+        <button type="button" class="tool danger" data-tool="eraser" title="Delete shape">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 8h14M9 8V6h6v2M8 8l1 12h6l1-12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Delete</span>
+        </button>
+
+        <div class="sep"></div>
+
+        <label class="field">
+          <span>Color</span>
+          <input type="color" id="strokeColor" value="#ff3b30" />
+        </label>
+        <label class="field">
+          <span>Fill</span>
+          <input type="color" id="fillColor" value="#00c4b4" />
+        </label>
+        <label class="field">
+          <span>Size</span>
+          <input type="range" id="strokeWidth" min="1" max="48" value="4" />
+        </label>
+        <label class="field check">
+          <input type="checkbox" id="filled" />
+          <span>Filled shapes</span>
+        </label>
+      </aside>
+
+      <main class="canvas-wrap" id="canvasWrap">
+        <div class="stage" id="stage">
+          <canvas id="baseCanvas"></canvas>
+          <canvas id="drawCanvas"></canvas>
+          <div id="textLayer" class="text-layer"></div>
+          <div id="cropOverlay" class="crop-overlay" hidden></div>
+        </div>
+        <p id="empty" class="empty">Loading screenshot…</p>
+      </main>
+    </div>
+
+    <footer class="statusbar">
+      <span id="zoomLabel">100%</span>
+      <div class="zoom-btns">
+        <button type="button" id="zoomOut" class="ghost sm">−</button>
+        <button type="button" id="zoomIn" class="ghost sm">+</button>
+        <button type="button" id="zoomFit" class="ghost sm">Fit</button>
+      </div>
+      <span id="hint">Draw, mark, and type on your capture — then download</span>
+    </footer>
+  </div>
+  <script src="editor.js" type="module"></script>
+</body>
+</html>

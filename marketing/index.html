@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flexshot — Capture. Mark. Ship.</title>
+  <meta name="description" content="Flexshot is a Chrome extension for screenshots, annotation, screen recording with audio, and web-to-PDF — built for fast visual communication." />
+  <link rel="icon" href="../icons/icon32.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="logo" href="#">
+      <img src="../icons/icon48.png" width="32" height="32" alt="" />
+      Flexshot
+    </a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#install">Install</a>
+    </nav>
+    <a class="cta-nav" href="#install">Get Flexshot</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="brand-mark">Flexshot</p>
+        <h1>Capture. Mark. Ship.</h1>
+        <p class="lede">Screenshots, full markup, screen + audio recording, and web-to-PDF — one Chrome extension for visual feedback that doesn’t slow you down.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#install">Install free</a>
+          <a class="btn ghost" href="#features">See what’s inside</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="monitor">
+          <div class="chrome-bar">
+            <span></span><span></span><span></span>
+            <div class="url">product.example / dashboard</div>
+          </div>
+          <div class="screen">
+            <div class="anno arrow"></div>
+            <div class="anno box"></div>
+            <div class="anno pin">1</div>
+            <div class="anno note">Fix this spacing</div>
+            <div class="fake-ui">
+              <div class="fake-side"></div>
+              <div class="fake-main">
+                <div class="fake-row"></div>
+                <div class="fake-row short"></div>
+                <div class="fake-card"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <h2>Everything you need after “wait, let me screenshot this”</h2>
+      <p class="section-lede">From a quick tab grab to a narrated walkthrough — Flexshot keeps capture and editing in one flow.</p>
+
+      <div class="feature-grid">
+        <article>
+          <h3>Screenshot modes</h3>
+          <p>Visible area, drag-to-select region, or full-page scroll stitch. Shortcuts: Alt+Shift+V / R / F.</p>
+        </article>
+        <article>
+          <h3>Full annotation</h3>
+          <p>Pen, marker, arrows, shapes, text, numbered pins, blur/redact, and crop — with undo and zoom.</p>
+        </article>
+        <article>
+          <h3>Screen + audio</h3>
+          <p>Record a tab, window, or screen. Mux mic and system audio, then download video and a separate audio file.</p>
+        </article>
+        <article>
+          <h3>Web → PDF</h3>
+          <p>Turn the live page into a multi-page PDF download for archives, tickets, and async reviews.</p>
+        </article>
+        <article>
+          <h3>Export anywhere</h3>
+          <p>Download PNG, JPG, or WebP from the editor. Copy annotated images to the clipboard in one click.</p>
+        </article>
+        <article>
+          <h3>Built for teams</h3>
+          <p>Perfect for bug reports, design feedback, support replies, and product demos without leaving Chrome.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="how" class="how">
+      <h2>Three steps. Zero friction.</h2>
+      <ol>
+        <li>
+          <strong>Capture</strong>
+          <span>Pick visible, region, full page, record, or PDF from the popup.</span>
+        </li>
+        <li>
+          <strong>Annotate</strong>
+          <span>Mark what matters — draw, type, pin, blur sensitive bits, crop the rest.</span>
+        </li>
+        <li>
+          <strong>Ship</strong>
+          <span>Download the image, video, audio, or PDF and drop it into Slack, email, or a ticket.</span>
+        </li>
+      </ol>
+    </section>
+
+    <section id="install" class="install">
+      <h2>Install Flexshot</h2>
+      <p class="section-lede">Load the unpacked extension while we prepare the Chrome Web Store listing.</p>
+      <ol class="install-steps">
+        <li>Open <code>chrome://extensions</code></li>
+        <li>Enable <strong>Developer mode</strong></li>
+        <li>Click <strong>Load unpacked</strong> and select the <code>flexshot</code> folder</li>
+        <li>Pin Flexshot and capture your first shot</li>
+      </ol>
+      <div class="store-note">
+        <p><strong>Chrome Web Store ready:</strong> package the folder (exclude marketing if you prefer), upload icons (16/48/128), and use the listing copy below.</p>
+      </div>
+    </section>
+
+    <section class="listing">
+      <h2>Store listing copy</h2>
+      <div class="listing-block">
+        <h3>Short description</h3>
+        <p>Capture screenshots, annotate freely, record screen with audio, and export pages to PDF.</p>
+      </div>
+      <div class="listing-block">
+        <h3>Detailed description</h3>
+        <pre>Flexshot helps you show what you mean.
+
+• Visible, region, and full-page screenshots
+• Pen, marker, arrows, shapes, text, pins, blur, crop
+• Screen recording with microphone and tab audio
+• Separate audio file download
+• Web page → multi-page PDF
+• PNG / JPG / WebP export + clipboard copy
+
+Shortcuts
+Alt+Shift+V — visible area
+Alt+Shift+R — region select
+Alt+Shift+F — full page
+
+Privacy: captures stay on your device. No account required.</pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Flexshot</span>
+    <span>Capture · Annotate · Record · PDF</span>
+  </footer>
+
+  <script>
+    const monitor = document.querySelector('.monitor');
+    if (monitor) {
+      monitor.animate(
+        [
+          { transform: 'translateY(0px) rotate(-1.2deg)' },
+          { transform: 'translateY(-10px) rotate(-0.4deg)' },
+          { transform: 'translateY(0px) rotate(-1.2deg)' }
+        ],
+        { duration: 7000, iterations: Infinity, easing: 'ease-in-out' }
+      );
+    }
+    document.querySelectorAll('.anno').forEach((el, i) => {
+      el.animate(
+        [
+          { opacity: 0, transform: 'scale(0.92) translateY(6px)' },
+          { opacity: 1, transform: 'scale(1) translateY(0)' }
+        ],
+        { duration: 700, delay: 400 + i * 180, fill: 'forwards', easing: 'cubic-bezier(.2,.8,.2,1)' }
+      );
+    });
+  </script>
+</body>
+</html>

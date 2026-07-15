@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flexshot Recorder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../src/record/recorder.css" />
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <img src="../../icons/icon48.png" alt="" width="36" height="36" />
+      <div>
+        <h1>Flexshot Record</h1>
+        <p>Capture screen, tab, or window — with microphone &amp; system audio</p>
+      </div>
+    </header>
+
+    <section class="panel">
+      <label class="opt">
+        <input type="checkbox" id="micAudio" checked />
+        Include microphone
+      </label>
+      <label class="opt">
+        <input type="checkbox" id="systemAudio" checked />
+        Prefer tab/system audio (when offered by Chrome)
+      </label>
+      <label class="opt">
+        <span>Separate audio download</span>
+        <select id="audioMode">
+          <option value="both">Video + separate audio file</option>
+          <option value="video">Video only (audio muxed)</option>
+          <option value="audio">Audio only</option>
+        </select>
+      </label>
+
+      <div class="controls">
+        <button type="button" id="btnStart" class="record">Start recording</button>
+        <button type="button" id="btnStop" class="stop" disabled>Stop &amp; download</button>
+      </div>
+
+      <div class="timer" id="timer">00:00</div>
+      <p class="status" id="status">Choose what to share when prompted, then record.</p>
+    </section>
+
+    <section class="preview-wrap">
+      <video id="preview" autoplay muted playsinline></video>
+    </section>
+
+    <footer>
+      <p>Downloads save as WebM video and/or WebM/Opus audio via Chrome’s save dialog.</p>
+    </footer>
+  </div>
+  
+</body>
+</html>

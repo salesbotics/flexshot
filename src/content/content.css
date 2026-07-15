@@ -1,0 +1,46 @@
+/*! Flexshot region & capture overlay styles */
+#flexshot-region-root {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483646 !important;
+  cursor: crosshair !important;
+  font-family: "Segoe UI", system-ui, sans-serif !important;
+}
+
+#flexshot-region-root .fs-dim {
+  position: absolute;
+  background: rgba(8, 16, 28, 0.55);
+  pointer-events: none;
+}
+
+#flexshot-region-root .fs-box {
+  position: absolute;
+  border: 2px solid #00c4b4;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.35);
+  background: transparent;
+  pointer-events: none;
+}
+
+#flexshot-region-root .fs-hint {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0a1622;
+  color: #e8f7f5;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  z-index: 2;
+}
+
+#flexshot-region-root .fs-hint kbd {
+  background: #1a2e40;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  margin: 0 2px;
+}
